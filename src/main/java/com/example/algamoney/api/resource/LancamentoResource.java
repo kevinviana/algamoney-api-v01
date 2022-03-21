@@ -7,15 +7,6 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import com.example.algamoney.api.event.RecursoCriadoEvent;
-import com.example.algamoney.api.exceptionHandler.AlgamoneyExceptionHandler.Erro;
-import com.example.algamoney.api.model.Lancamento;
-import com.example.algamoney.api.repository.LancamentoRepository;
-import com.example.algamoney.api.repository.filter.LancamentoFilter;
-import com.example.algamoney.api.repository.projection.ResumoLancamento;
-import com.example.algamoney.api.service.LancamentoService;
-import com.example.algamoney.api.service.exception.PessoaInexistenteOuInativaException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.MessageSource;
@@ -30,10 +21,20 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.algamoney.api.event.RecursoCriadoEvent;
+import com.example.algamoney.api.exceptionHandler.AlgamoneyExceptionHandler.Erro;
+import com.example.algamoney.api.model.Lancamento;
+import com.example.algamoney.api.repository.LancamentoRepository;
+import com.example.algamoney.api.repository.filter.LancamentoFilter;
+import com.example.algamoney.api.repository.projection.ResumoLancamento;
+import com.example.algamoney.api.service.LancamentoService;
+import com.example.algamoney.api.service.exception.PessoaInexistenteOuInativaException;
 
 @RestController
 @RequestMapping("/lancamentos")
@@ -92,5 +93,16 @@ public class LancamentoResource {
 		String mensagemDesenvolvedor = ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
 		return ResponseEntity.badRequest().body(erros);
+	}
+	
+	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_LANCAMENTO')")
+	public ResponseEntity<Lancamento> atualizar(@PathVariable Long codigo, @Valid @RequestBody Lancamento lancamento) {
+		try {
+			Lancamento lancamentoSalvo = lancamentoService.atualizar(codigo, lancamento);
+			return ResponseEntity.ok(lancamentoSalvo);
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.notFound().build();
+		}
 	}
 }
