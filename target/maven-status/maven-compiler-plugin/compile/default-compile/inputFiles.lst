@@ -3,8 +3,10 @@ C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\repository\lancamento\LancamentoRepositoryImpl.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\resource\PessoaResource.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\token\RefreshTokenCookiePreProcessorFilter.java
+C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\config\token\CustomTokenEnhancer.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\repository\CategoriaRepository.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\repository\LancamentoRepository.java
+C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\config\BasicSecurityConfig.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\service\exception\PessoaInexistenteOuInativaException.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\model\Categoria.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\service\LancamentoService.java
@@ -12,6 +14,7 @@ C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\model\Permissao.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\model\Lancamento.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\model\Usuario.java
+C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\security\UsuarioSistema.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\repository\UsuarioRepository.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\resource\CategoriaResource.java
 C:\Users\e.kevin.pereira\Algaworks\Fullstack Angular e Spring\algamoney-api\src\main\java\com\example\algamoney\api\AlgamoneyApiApplication.java
